@@ -1,0 +1,11 @@
+%syntax-version=1.0.0
+%project=edibles
+
+init 2021-09-20T12:09:31Z henok <adeyamah@yahoo.fr> # init db
+user_SQL_functions 2021-09-22T11:48:56Z Anthony <durand.anthony23@gmail.com> # Création des fonctions SQL user
+seeding 2021-09-22T07:53:50Z henok <adeyamah@yahoo.fr> # Mise en place de qq données dans les tables
+stock_SQL_functions 2021-09-23T11:37:40Z Anthony <durand.anthony23@gmail.com> # Création des fonctions SQL stock
+product_SQL_functions 2021-09-24T11:43:08Z Anthony <durand.anthony23@gmail.com> # Création des fonctions SQL product
+constraints 2021-09-27T08:42:57Z henok <adeyamah@yahoo.fr> # ajout des différentes contraines dans les tables Stock et User
+subscription 2021-09-29T11:28:06Z Anthony <durand.anthony23@gmail.com> # Création table subscription
+subscription_view 2021-09-29T13:16:43Z Anthony <durand.anthony23@gmail.com> # Création de la vue get_peremption_product

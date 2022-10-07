@@ -1,0 +1,157 @@
+@host=http://localhost:3000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiYW50aG9ueTFAb2Nsb2NrLmlvIiwiaWQiOjUsImZpcnN0bmFtZSI6IkFudGhvbnkiLCJsYXN0bmFtZSI6IkR1cmFuZCIsImV4cGlyYXRpb25fZGF0ZV9ub3RpZmljYXRpb24iOnRydWUsImRlZmF1bHRfc3RvY2siOiJNYWlzb24ifSwiaWF0IjoxNjMzNDI4MjAwLCJleHAiOjE2MzM0MzE4MDB9.6bPDeX8awbtAY8vzrIJZdKtRSP1uk2DZYg7wI49dvpM
+
+// Test signup user
+POST {{host}}/signup
+Content-Type: application/json
+
+{
+    "email": "adeyamah@yahoo.fr",
+    "password": "motdepasseyouknok7877",
+    "repeatPassword": "motdepasseyouknok7877",
+    "firstname": "henok",
+    "lastname": "Adeyama"
+}
+
+###
+
+// Test login user
+POST {{host}}/login
+Content-Type: application/json
+
+{
+    "email": "anthony1@oclock.io",
+    "password": "js4lifes"
+}
+
+###
+
+// Test get user from token
+GET {{host}}/user
+Authorization: {{token}}
+
+###
+
+// Test update user
+PATCH {{host}}/user
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "email": "anthony@oclock.io",
+    "password": "test",
+    "firstname": "Anthony",
+    "lastname": "Durand",
+    "expiration_date_notification": false,
+    "default_stock": "all"
+}
+
+###
+
+// Test delete user
+DELETE {{host}}/user
+Authorization: {{token}}
+
+###
+
+//Test create stock
+POST {{host}}/stock
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "name": "Cellier"
+}
+
+###
+
+// Test get all stocks
+GET {{host}}/stock
+Authorization: {{token}}
+
+###
+
+// Test get one stock
+GET {{host}}/stock/4
+Authorization: {{token}}
+
+###
+
+// Test update one stock
+PATCH {{host}}/stock/14
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "name": "Maison"
+}
+
+###
+DELETE {{host}}/stock/9
+Authorization: {{token}}
+
+###
+
+// PRODUCT
+
+//GET product of ALL stocks
+GET {{host}}/product
+Authorization: {{token}}
+
+###
+//GET all products of one stock
+GET {{host}}/stock/6/product
+Authorization: {{token}}
+
+###
+
+//ADD product
+POST {{host}}/product
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "name": "Bierre4",
+    "quantity": "3",
+    "expirationDate": "2021-09-04",
+    "stockId": 6
+}
+
+###
+
+//UPDATE product
+PATCH {{host}}/product/21
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "name": "Chocolat",
+    "quantity": "3",
+    "expirationDate": "2021-09-27",
+    "stockId": 5
+}
+
+###
+
+// DELETE a product
+DELETE {{host}}/product/12
+Authorization: {{token}}
+
+###
+// Forgot password 
+POST {{host}}/forgotPassword
+Content-Type: application/json
+
+{
+    "email": "adeyamah@yahoo.fr"
+}
+
+###
+//Reset Password
+POST http://localhost:3000/resetPassword/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiYWRleWFtYWhAeWFob28uZnIiLCJpZCI6NH0sImlhdCI6MTYzMzAxMjg3NSwiZXhwIjoxNjMzMDE2NDc1fQ.Wg1Xi1sr6GVc2jWnw6LSBE8D-7TRt6k1gU9EtJpCObs
+Content-Type: application/json
+
+{
+    "password": "nouveaumotdepasse23",
+    "repeatPassword":"nouveaumotdepasse23"
+}

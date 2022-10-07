@@ -1,0 +1,7 @@
+USER: email, password, firstname, lastname, expireDate_notification, default_stock
+POSSESS, 11 STOCK, 0N USER
+STOCK: _name
+
+:
+PRODUCT: _code, name, quantity, expiration date
+HAVE, 0N STOCK, 1N PRODUCT
